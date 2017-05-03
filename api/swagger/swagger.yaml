@@ -44,13 +44,145 @@ paths:
     x-swagger-router-controller: wonderware
     x-a127-apply: {}
     get:
-      description: Get NIAT by division.
+      description: By division.
       # used as the method name of the controller
       operationId: getNiats
       parameters:
         - name: division
           in: path
-          description: Number division of NIAT.
+          description: division name.
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/HelloWorldResponse"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /volumes:
+    # binds a127 app logic to a route
+    x-swagger-router-controller: wonderware
+    x-a127-apply: {}
+    get:
+      description: Get all data. 
+      # used as the method name of the controller
+      operationId: getVolumes 
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/HelloWorldResponse"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /volumes/{division}:
+    # binds a127 app logic to a route
+    x-swagger-router-controller: wonderware
+    x-a127-apply: {}
+    get:
+      description: By division.
+      # used as the method name of the controller
+      operationId: getVolumes
+      parameters:
+        - name: division
+          in: path
+          description: division name.
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/HelloWorldResponse"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /gpiocfs:
+    # binds a127 app logic to a route
+    x-swagger-router-controller: wonderware
+    x-a127-apply: {}
+    get:
+      description: Get all data. 
+      # used as the method name of the controller
+      operationId: getGpIocfs 
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/HelloWorldResponse"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /gpiocfs/{division}:
+    # binds a127 app logic to a route
+    x-swagger-router-controller: wonderware
+    x-a127-apply: {}
+    get:
+      description: By division.
+      # used as the method name of the controller
+      operationId: getGpIocfs
+      parameters:
+        - name: division
+          in: path
+          description: division name.
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/HelloWorldResponse"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /target-safety-stocks:
+    # binds a127 app logic to a route
+    x-swagger-router-controller: wonderware
+    x-a127-apply: {}
+    get:
+      description: Get all data. 
+      # used as the method name of the controller
+      operationId: getTargetSafetyStocks
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/HelloWorldResponse"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /target-safety-stocks/{division}:
+    # binds a127 app logic to a route
+    x-swagger-router-controller: wonderware
+    x-a127-apply: {}
+    get:
+      description: By division.
+      # used as the method name of the controller
+      operationId: getTargetSafetyStocks
+      parameters:
+        - name: division
+          in: path
+          description: division name.
           required: true
           type: string
       responses:
